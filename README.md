@@ -1,2 +1,2 @@
-# Nucleo-Stm32f767zi
-Embedded codes for Nucleo Board (STM32F767zi)
+## Nucleo-Stm32f767zi
+Step Wise embedded code guide for for Nucleo Board (STM32F767zi)
