@@ -14,17 +14,17 @@ int main(){
 	
 		// Setting Output mode for LEDs
 	
-		GPIOB->MODER |= 0x1;				//LED2 <-> PB0	
-		GPIOB->MODER |= 0x4000;			//LED2 <-> PB7
-		GPIOB->MODER |= 0x10000000;	//LED3 <-> PB14
+		GPIOB->MODER |= 0x1;		// LED2 <-> PB0	
+		GPIOB->MODER |= 0x4000;		// LED2 <-> PB7
+		GPIOB->MODER |= 0x10000000;	// LED3 <-> PB14
 		
 		while(1){
-				if(GPIOC->IDR & 0x2000){ 
-				//if PC13 is high 	
-					GPIOB->ODR = 0x4081;  // LED 1,2,3 ON!	
-				}
-				else{
-					GPIOB->ODR = 0;				// LED 1,2,3 OFF				
-				}
+			if(GPIOC->IDR & 0x2000){ 
+			// if PC13 is high 	
+				GPIOB->ODR = 0x4081;  	// LED 1,2,3 ON!	
+			}
+			else{
+				GPIOB->ODR = 0;		// LED 1,2,3 OFF				
+			}
 		}
 }
