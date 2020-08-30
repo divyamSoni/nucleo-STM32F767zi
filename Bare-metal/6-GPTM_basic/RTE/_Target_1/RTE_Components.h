@@ -3,8 +3,8 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'systickdelay' 
- * Target:  'stm32f767zi' 
+ * Project: 'GPTM_basic' 
+ * Target:  'Target 1' 
  */
 
 #ifndef RTE_COMPONENTS_H

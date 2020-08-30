@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'systickdelay' 
+ * Project: 'GPTM_basic' 
  * Target:  'stm32f767zi' 
  */
 
