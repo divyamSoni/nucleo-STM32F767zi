@@ -11,7 +11,9 @@ Device - Startup
 ### Target options
 
 Xtal (MHz): 16
+
 Debugger: ST-Link Debugger
+
 Flash Download Function: 
 Erase Sectors, 
 Program, Verify, Reset and Run
