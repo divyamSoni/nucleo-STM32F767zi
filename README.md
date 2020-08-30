@@ -2,13 +2,13 @@
 Basic Embedded code for Nucleo Board STM32f767zi
 
 
-# Run-Time Environment
+### Run-Time Environment
 
 CMSIS -	Core
 Device - Startup 
 
 
-# Target options
+### Target options
 
 Xtal (MHz): 16
 Debugger: ST-Link Debugger
