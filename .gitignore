@@ -1,3 +1,11 @@
+## Ignored Keil Project folders
+/DebugConfig
+/Listings
+/Objects
+/RTE
+
+
+## Users
 *.Dell
 *.msi
 *.Divyam
