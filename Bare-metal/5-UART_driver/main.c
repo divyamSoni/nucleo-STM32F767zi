@@ -1,7 +1,7 @@
 /*	USART2 <-> APB1
-		RCC->APB1ENR bit 17 for UART2
-		PA2 <-> USART2_TX
-		PA3 <-> USART2_RX
+	RCC->APB1ENR bit 17 for UART2
+	PA2 <-> USART2_TX
+	PA3 <-> USART2_RX
 */
 
 #include "stm32f7xx.h"
@@ -24,7 +24,7 @@ int main(void){
 void USART2_Init(void){
 	
 	RCC->APB1ENR |= 0x20000; 		// Enables clock access to USART2
-	RCC->AHB1ENR |= 1;        	// Enables clock access to GPIOA
+	RCC->AHB1ENR |= 1;        		// Enables clock access to GPIOA
 	
 	USART2->BRR = 0x0682; 			// 9600 @16 MHz
 	USART2->CR1 = 0x0008; 			// Enable Tx
