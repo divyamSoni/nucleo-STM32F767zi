@@ -7,11 +7,11 @@ int main(){
 	/* 	Timer config
 			1 Hz TIMER
 	*/
-	RCC->APB1ENR |= 1;			// Enable clock for Timer2
-	TIM2->PSC = 1600-1;			// Divide 16,000,000 by 1600
+	RCC->APB1ENR |= 1;		// Enable clock for Timer2
+	TIM2->PSC = 1600-1;		// Divide 16,000,000 by 1600
 	TIM2->ARR = 10000-1;		// Divide 10,000 by 10,000
-	TIM2->CNT = 0;				// Clear the Timer2 counter
-	TIM2->CR1 = 1;				// Enable the Timer2 counter
+	TIM2->CNT = 0;			// Clear the Timer2 counter
+	TIM2->CR1 = 1;			// Enable the Timer2 counter
 	
 	while(1){
 		while(!(TIM2->SR & 1)){}
