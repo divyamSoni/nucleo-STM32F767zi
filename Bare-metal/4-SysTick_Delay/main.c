@@ -16,8 +16,8 @@ int main(void){
 
 void sysTickDelayMs(int n){
 	// Clock 16 MHz
-	SysTick->LOAD = 16000; 	// Load with number of clocks per milisecond
-	SysTick->VAL = 0;				// Clear current value register
+	SysTick->LOAD = 16000; 		// Load with number of clocks per milisecond
+	SysTick->VAL = 0;		// Clear current value register
 	SysTick->CTRL = 0x5;		// Enable SysTick
 	
 	for(int i = 0; i<n; i++){
