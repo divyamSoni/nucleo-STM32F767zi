@@ -1,11 +1,14 @@
 ## Ignored Keil Project folders
-/DebugConfig
-/Listings
-/Objects
-/RTE
+DebugConfig/
+Listings/
+Objects/
+RTE/
 
+## Keil project files
+*.uvoptx
+*.uvprojx
 
-## Users
+## User files
 *.Dell
 *.msi
 *.Divyam
