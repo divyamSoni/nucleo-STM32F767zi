@@ -8,7 +8,7 @@ RTE/
 ## Keil project files
 *.uvoptx
 *.uvprojx
-
+*.scvd
 
 ## User files
 *.Dell
