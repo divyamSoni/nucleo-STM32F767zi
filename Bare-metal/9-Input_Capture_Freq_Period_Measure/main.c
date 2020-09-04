@@ -18,7 +18,7 @@ int main(void){
 	TIM3->PSC = 1600-1;										// Divide 16,000,000 by 1,600
 	TIM3->ARR = 10000-1;									// Divide 10,000 by 10,000
 	TIM3->CCMR2 = 0x30;										// Output compare 3 mode
-	TIM3->CCR1 = 0;												// Set match mode
+	TIM3->CCR3 = 0;												// Set match mode
 	TIM3->CCER = 0x100;										// CH3 channel configured as input
 	TIM3->CNT = 0;												// Clear counter
 	TIM3->CR1 = 1;												// Enable TIM3
