@@ -1,10 +1,11 @@
 ## Nucleo-Stm32f767zi
-Basic Embedded code for Nucleo Board STM32f767zi
+Basic bare-metal Embedded code for Nucleo Board STM32f767zi
 
 
 ### Run-Time Environment
 
 CMSIS -	Core
+
 Device - Startup 
 
 
