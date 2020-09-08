@@ -7,7 +7,7 @@ volatile int PC13_counter = 0;
 
 int main(void){
 	
-	RCC->AHB1ENR |= 6;					// Enable GPIOB, C
+	RCC->AHB1ENR |= 6;			// Enable GPIOB, C
 	
 	RCC->APB2ENR |= 0x4000;			// Enable SysConfig clock
 	
