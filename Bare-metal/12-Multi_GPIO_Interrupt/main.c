@@ -15,8 +15,8 @@ int main(void){
 		
 	SYSCFG->EXTICR[3] |= 0x0020;		// Select Port C for EXTI13
 	
-	EXTI->IMR |= 0x2000;		// Unmask EXTI13
-	EXTI->FTSR |= 0x2000;		// Select falling egde trigger
+	EXTI->IMR |= 0x2000;			// Unmask EXTI13
+	EXTI->FTSR |= 0x2000;			// Select falling egde trigger
 	
 	GPIOB->PUPDR |= 00100000;		// Enable pull-up resistor for PB10
 	
@@ -69,7 +69,6 @@ void sysTickDelayMs(int n){
 	SysTick->CTRL = 0x5;		// Enable SysTick
 	
 	for(int i = 0; i<n; i++){
-		
 		// Wait until the count flag is set
 		while((SysTick->CTRL & 0x10000) == 0){}
 	
