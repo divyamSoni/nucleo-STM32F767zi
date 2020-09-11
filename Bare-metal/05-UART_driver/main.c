@@ -1,46 +1,36 @@
-/*	USART2 <-> APB1
-	RCC->APB1ENR bit 17 for UART2
-	PA2 <-> USART2_TX
-	PA3 <-> USART2_RX
+/*	
+		RCC->APB1ENR bit 19 for UART4
+		PA0 <-> AF8 <-> UART4_TX
 */
 
 #include "stm32f7xx.h"
 
-void USART2_Init(void);
-void USART_write(int ch);
+void UART2_Init(void);
+void UART_write(int ch);
 void delayms(int delay);
 
-int main(void){
-	
-	USART2_Init();
-	
-	while(1){
-		USART_write('H');
-		USART_write('i');
-		delayms(10);
-	}	
-}
+char chara = '0';
 
-void USART2_Init(void){
+void UART4_Init(void){
 	
-	RCC->APB1ENR |= 0x20000; 		// Enables clock access to USART2
-	RCC->AHB1ENR |= 1;        		// Enables clock access to GPIOA
+	RCC->APB1ENR |= 0x80000; 		// Enables clock access to UART4
+	RCC->AHB1ENR |= 1;        	// Enables clock access to GPIOA
 	
-	USART2->BRR = 0x0682; 			// 9600 @16 MHz
-	USART2->CR1 = 0x0008; 			// Enable Tx
-	USART2->CR1 |= 1;     			// Enable USART
+	UART4->BRR = 0x0682; 				// 9600 @16 MHz
+	UART4->CR1 |= 0x0008;				// Enable Tx
+	UART4->CR1 |= 1;     				// Enable UART
 	
-	GPIOA->AFR[0] = 0x0700; 		// Enabling USART2 PA2 AF7
-	GPIOA->AFR[1] = 0X0700;			// Enabling USART2 PA2 AF7
-	GPIOA->MODER |= 0x0020;  		// PA2 <-> Alternate function
-	GPIOA->MODER |= 0X0080;			// PA3 <-> Alternate function
+	GPIOA->AFR[0] = 8; 					// Enabling UART4 PA0 AF8
+	GPIOA->MODER |= 2;  				// PA0 <-> Alternate function
 
 }
 
-void USART_write(int ch){
+void UART_write(int ch){
 	// wait while TX buffer is empty
-	while(!(USART2->ISR & 0x0080)){}
-		USART2->TDR = (ch & 0xFF);
+	while(!(UART4->ISR & 0x0080)){}
+		chara = UART4->TDR;
+		UART4->TDR = (ch & 0x1FF);
+		
 }
 
 void delayms(int delay){
@@ -48,4 +38,17 @@ void delayms(int delay){
 	for(; delay>0; delay--){
 		for(i=0;i<3195;i++);
 	}
+}
+
+
+int main(void){
+	
+	UART4_Init();
+	
+	while(1){
+		UART_write('H');
+		delayms(1000);
+		UART_write('i');
+		delayms(1000);
+	}	
 }
