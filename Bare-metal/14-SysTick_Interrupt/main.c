@@ -9,12 +9,12 @@ int main(void){
 	
 	__disable_irq();
 	
-	RCC->AHB1ENR |= 2;							// Clock access to GPIOB
-	GPIOB->MODER |= 1;							// Output mode for LED1							
+	RCC->AHB1ENR |= 2;			// Clock access to GPIOB
+	GPIOB->MODER |= 1;			// Output mode for LED1							
 	
 	SysTick->LOAD = 16000000 - 1;		// Get 1 Hz interrupt
 	SysTick->VAL 	= 0;
-	SysTick->CTRL = 7;							// Enable Interrupt for SysTick
+	SysTick->CTRL = 7;			// Enable Interrupt for SysTick
 	
 	__enable_irq();
 	
@@ -22,6 +22,6 @@ int main(void){
 	
 }
 
-void SysTick_Handler(void){			// Any Interrupt Service Routine
-	GPIOB->ODR ^= 0x01;						// e.g. toggling LED
+void SysTick_Handler(void){		// Any Interrupt Service Routine
+	GPIOB->ODR ^= 0x01;		// e.g. toggling LED
 }
