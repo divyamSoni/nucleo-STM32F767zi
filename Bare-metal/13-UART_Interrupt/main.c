@@ -8,7 +8,7 @@ int main(void){
 
 	__disable_irq();
 	
-	RCC->AHB1ENR |= 2;					// Enable clock access to GPIOB
+	RCC->AHB1ENR |= 2;				// Enable clock access to GPIOB
 	GPIOB->MODER |= 0x1;				// Set output mode for PB0
 	
 	UART4_Init();
@@ -24,14 +24,14 @@ int main(void){
 
 void UART4_Init(void){
 	
-	RCC->APB1ENR |= 0x80000; 		// Enables clock access to UART4
+	RCC->APB1ENR |= 0x80000; 	// Enables clock access to UART4
 	RCC->AHB1ENR |= 1;        	// Enables clock access to GPIOA
 	
 	UART4->BRR = 0x008B; 				// 115200 @16 MHz
 	UART4->CR1 |= 0x0004;				// Enable Rx
 	UART4->CR1 |= 1;     				// Enable UART
 	
-	GPIOA->AFR[0] = 8; 					// Enabling UART4 PA0 AF8
+	GPIOA->AFR[0] = 8; 				// Enabling UART4 PA0 AF8
 	GPIOA->MODER |= 2;  				// PA0 <-> Alternate function
 
 }
