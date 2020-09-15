@@ -5,12 +5,12 @@ int analogValue;
 int main(void){
 	
 	RCC->AHB1ENR |= 1;
-	GPIOA->MODER |= 0xC;				// Set PA1 to analog
+	GPIOA->MODER |= 0xC;			// Set PA1 to analog
 	
 	RCC->APB2ENR |= 0x100;			// Enable clock access to ADC
-	ADC1->CR2 = 0;							// Turn ADC off
-	ADC1->SQR3 = 1;							// Conversion sequence to start at CH1
-	ADC1->CR2 |= 1;							// Enable the ADC
+	ADC1->CR2 = 0;				// Turn ADC off
+	ADC1->SQR3 = 1;				// Conversion sequence to start at CH1
+	ADC1->CR2 |= 1;				// Enable the ADC
 	
 	
 	while(1){
