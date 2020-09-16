@@ -28,9 +28,9 @@ int main(void){
 	ADC->CCR |=  0x00800000;			// Temperature sensor and VREFINT channel enabled
 	ADC->CCR &=~ 0x00400000;			// Disabled Vbat for temp sensor
 	
-	ADC1->CR2 = 0;								// Turn ADC off
+	ADC1->CR2 = 0;				// Turn ADC off
 	ADC1->SMPR1 = 0x00400000; 		// Sampling time minimum 10usec
-	ADC1->SQR3 = 18;							// Temp sens. connected to CH18
+	ADC1->SQR3 = 18;			// Temp sens. connected to CH18
 	ADC1->CR2 |= 0x13000000;
 	ADC1->CR2 |= 1;
 	
@@ -50,13 +50,13 @@ int main(void){
 void UART4_Init(void){
 	
 	RCC->APB1ENR |= 0x80000; 		// Enables clock access to UART4
-	RCC->AHB1ENR |= 1;        	// Enables clock access to GPIOA
+	RCC->AHB1ENR |= 1;        		// Enables clock access to GPIOA
 	
 	UART4->BRR = 0x0682; 				// 9600 @16 MHz
 	UART4->CR1 |= 0x0008;				// Enable Tx
 	UART4->CR1 |= 1;     				// Enable UART
 	
-	GPIOA->AFR[0] = 8; 					// Enabling UART4 PA0 AF8
+	GPIOA->AFR[0] = 8; 				// Enabling UART4 PA0 AF8
 	GPIOA->MODER |= 2;  				// PA0 <-> Alternate function
 
 }
