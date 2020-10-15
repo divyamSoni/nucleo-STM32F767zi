@@ -27,7 +27,7 @@ int main(void){
 		
 		lcd_command(0x80);			// Write on Line 1
 		lcd_data('R');
-		lcd_data('S');
+		lcd_data('G');
 		lcd_data('2');
 		lcd_data('0');
 		lcd_data('0');
