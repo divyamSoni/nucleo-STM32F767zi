@@ -1,5 +1,5 @@
-#ifndef __GLCD_ST7735
-#define __GLCD_ST7735
+#ifndef __ST7735
+#define __ST7735
 #include <stdint.h>
 
 #include "stm32f7xx_hal.h"              // Keil::Device:STM32Cube HAL:Common

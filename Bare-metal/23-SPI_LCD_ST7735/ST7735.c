@@ -1,12 +1,10 @@
 #include "ST7735.h"
 
-//**********************Start of ST7735 LCD APIs*********************/
 void ST7735_GPIO_Init(void){
-		//SPI2 Pins
-		
-		//RES: PB5
-		//DC:  PB4
-		//CS: PB3
+		//	SPI2 Pins		
+		//	RES: PB5
+		//	DC:  PB4
+		//	CS: PB3
    
   GPIO_InitTypeDef GPIO_InitStruct;
 
@@ -18,8 +16,7 @@ void ST7735_GPIO_Init(void){
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-
-//skipped	
+	
   GPIO_InitStruct.Pin = GPIO_PIN_3;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 }
@@ -60,8 +57,6 @@ void lcd7735_send16bData(uint8_t msb,uint8_t lsb) {
 	uint8_t masData[]={lsb,msb};
 	HAL_SPI_Transmit(&hspi2,masData,1,0x1);
 }
-
-
 
 void HAL_SPI_MspInit(SPI_HandleTypeDef* hspi){
 		GPIO_InitTypeDef GPIO_InitStruct;
