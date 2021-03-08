@@ -28,3 +28,27 @@ Mainly 2 documents are required to program a particular microcontroller.
 
 #### Flash Download
 [![Download Function](https://img.shields.io/badge/Download_Function-Erase_Sectors,Program,Verify,Reset_&_Run-informational?style=flat&color=blueviolet&logo=data:image/svg%2bxml)](https://www.keil.com/support/man/docs/ulinkme/ulinkme_su_download_functions.htm)
+
+#### CODES
+
+1. [Hello World of Embedded - Blink an LED](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/01-blinky)
+2. [General Purpose Input Output](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/02-GPIO_Input)
+3. [System Tick Timer Basic](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/03-Systic_Basic)
+4. [Delay using System Tick Timer](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/04-SysTick_Delay)
+5. [Universal Synchronous/Asynchronous Receiver Transmitter Driver](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/05-UART_driver)
+6. [General Purpose Timer Module Basic](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/06-GPTM_basic)
+7. [General Purpose Timer Module Compare](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/07-GPTM_compare)
+8. [General Purpose Timer Module Input Capture](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/08-GPTM_input_capture)
+9. [Input Capture Frequency Period Measurement](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/09-Input_Capture_Freq_Period_Measure)
+10. [Pulse Width Modulation Using Timer](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/10-Timer_PWM)
+11. [General Purpose I/O Interrupt](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/11-GPIO_Interrupt)
+12. [Multiple General Purpose I/O Interrupt](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/12-Multi_GPIO_Interrupt)
+13. [Universal Asynchronous Receiver-Transmitter Interrupt](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/13-UART_Interrupt)
+14. [System Tick Timer Interrupt](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/14-SysTick_Interrupt)
+15. [General Purpose Timer Module Interrupt](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/15-GPTM_Interrupt)
+16. [Analog To Digital Converter Basic](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/16-ADC_basic)
+17. [Analog to Digial Converter + Timer Basic](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/17-ADC_TIM_UART)
+18. [Liquid Crystal Display 8-bit Mode Basic](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/18-LCD_8-bit_mode_basic)
+19. [Liquid Crystal Display 8-bit Mode String](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/19-LCD_8-bit_mode_string)
+20. [Serial Peripheral Interface Basic](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/22-SPI_basic)
+21. [Serial Peripheral Interface + Liquid Crystal Display](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/23-SPI_LCD_ST7735)
