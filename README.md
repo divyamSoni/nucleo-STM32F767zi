@@ -29,7 +29,7 @@ Mainly 2 documents are required to program a particular microcontroller.
 #### Flash Download
 [![Download Function](https://img.shields.io/badge/Download_Function-Erase_Sectors,Program,Verify,Reset_&_Run-informational?style=flat&color=blueviolet&logo=data:image/svg%2bxml)](https://www.keil.com/support/man/docs/ulinkme/ulinkme_su_download_functions.htm)
 
-#### CODES
+#### 1. BARE-METAL (register codes)
 
 1. [Hello World of Embedded - Blink an LED](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/01-blinky)
 2. [General Purpose Input Output](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/02-GPIO_Input)
