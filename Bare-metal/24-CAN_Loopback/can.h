@@ -1,9 +1,9 @@
 typedef struct __attribute__((__packed__)){
-  unsigned int   id;       // Arbitration Id
-  unsigned char  data[8];  // Data field
-  unsigned char  len;      // Length of data field in bytes
-	unsigned char  format; // 0 - STANDARD, 1- EXTENDED IDENTIFIER
-	unsigned char  type;   // 0 - DATA FRAME, 1 - REMOTE FRAME
+  unsigned int  id;       // Arbitration Id
+  unsigned char data[8];  // Data field
+  unsigned int  len;      // Length of data field in bytes
+	unsigned int  format; // 0 - STANDARD, 1- EXTENDED IDENTIFIER
+	unsigned int  type;   // 0 - DATA FRAME, 1 - REMOTE FRAME
 } CAN_msg;
 
 extern CAN_msg CAN_TxMsg;   // CAN messge for sending
@@ -25,7 +25,12 @@ void CAN1_Init(void);
 void CAN1_ready(void);
 void CAN1_Tx(CAN_msg *msg);
 void CAN1_Rx(CAN_msg *msg);
-void CAN1_Filter(unsigned int id, unsigned char format);
+void CAN1_Tx_Info(unsigned int id,
+                    char* mes,
+				    unsigned int len,
+					unsigned int format,
+					unsigned int type);
+void CAN1_Filter(unsigned int id, unsigned int format);
 void Interrupt_Init(void);
 void CAN1_TX_IRQHandler(void);
 void CAN1_RX0_IRQHandler(void);
