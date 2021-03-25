@@ -52,3 +52,4 @@ Mainly 2 documents are required to program a particular microcontroller.
 19. [Liquid Crystal Display 8-bit Mode String](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/19-LCD_8-bit_mode_string)
 20. [Serial Peripheral Interface Basic](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/22-SPI_basic)
 21. [Serial Peripheral Interface + Liquid Crystal Display](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/23-SPI_LCD_ST7735)
+22. [CAN Loopback Mode](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/24-CAN_Loopback)
