@@ -15,7 +15,7 @@ int main(){
 	
 	while(1){
 		while(!(TIM2->SR & 1)){}
-			TIM2->SR &=~ 1;		
+			TIM2->SR &=~ 1UL;		
 			GPIOB->ODR ^= 0x80;	// Toggle ODR7
 	}
 }

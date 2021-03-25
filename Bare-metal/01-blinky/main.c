@@ -16,9 +16,9 @@ int main(void)
 	while(1)
 	{
 		GPIOB->ODR = 0x80;
-		delayMs(100);
+		delayMs(1000);
 		GPIOB->ODR &=~ 0x80;
-		delayMs(100);
+		delayMs(1000);
 	}
 }
 
