@@ -24,8 +24,8 @@ int main(){
 	Interrupt_Init();
 
 	while(1){
-			if(CAN1_TxRdy){
-				CAN1_TxRdy = 0;
+		if(CAN1_TxRdy){
+			CAN1_TxRdy = 0;
 			CAN1_Tx(&CAN_TxMsg);
         }
 		if(CAN1_RxRdy){
