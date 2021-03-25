@@ -42,8 +42,8 @@ void GPIOA_Init(void){
 	GPIOB->MODER |= 0x4000;        // LD2 <-> PB7  <-> Blue	   <-> 0x0080
 	GPIOB->MODER |= 0x010000000;   // LD3 <-> PB14 <-> Green   <-> 0x0001
 
-	GPIOA->AFR[1] |= 0x99000;				// Enabling CAN1 on PA11, PA12
-	GPIOA->MODER |= (1UL<<23)|(1UL<<25);	// PA11, PA12 <-> Alternate Function
+	GPIOA->AFR[1] |= 0x99000;              // Enabling CAN1 on PA11, PA12
+	GPIOA->MODER |= (1UL<<23)|(1UL<<25);   // PA11, PA12 <-> Alternate Function
 
 	GPIOA->PUPDR |= 1UL<<22;       // Pullup PA11/CAN_Rx - For Recessive state
 }
