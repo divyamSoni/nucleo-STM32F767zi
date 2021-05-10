@@ -9,6 +9,8 @@ This is a guide for newbies to bare metal programming using nucleo-STM32F767zi b
 [![nucleo-Stm32f767zi](https://img.shields.io/badge/Board-nucleo_STM32f767zi-informational?style=flat&logo=data:image/svg%2bxml;base64,PHN2ZyByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+U1RNaWNyb2VsZWN0cm9uaWNzIGljb248L3RpdGxlPjxwYXRoIGQ9Ik0gMjMuODE4IDUuNjEgTCA2LjQwMiA1LjYxIEMgNS4xMjUgNS42MDkgMy45NjggNi4zNjIgMy40NTIgNy41MjkgTCAwLjAxNCAxNS44MTEgQyAtMC4wMzYgMTUuOTMxIDAuMDUyIDE2LjA2MyAwLjE4MiAxNi4wNjEgTCA4LjA0NiAxNi4wNjEgQyA4LjYwMSAxNi4wNjEgOC44NDggMTUuNTIzIDguNDEyIDE1LjA5MyBMIDUuNTI0IDEyLjM4OCBDIDQuMDA4IDEwLjkgNC42NTggNy40NSA3LjgxIDcuNDUgTCAyMy4yMDYgNy40NSBDIDIzLjI4MyA3LjQ1MSAyMy4zNTIgNy40MDIgMjMuMzc4IDcuMzI5IEwgMjMuOTg3IDUuODU3IEMgMjMuOTk2IDUuODM1IDI0LjAwMSA1LjgxMSAyNCA1Ljc4NyBDIDIzLjk5NyA1LjY4OSAyMy45MTcgNS42MSAyMy44MTggNS42MSBNIDIyLjA4MiA5LjgyNiBMIDE5LjEyNiA5LjgyNiBDIDE4LjkzMiA5LjgyNSAxOC43NTYgOS45NCAxOC42ODEgMTAuMTE4IEwgMTUuMzY5IDE4LjExOCBDIDE1LjM1NSAxOC4xNDQgMTUuMzQ3IDE4LjE3MyAxNS4zNDcgMTguMjAyIEMgMTUuMzQ4IDE4LjMwMiAxNS40MjkgMTguMzgzIDE1LjUyOSAxOC4zODEgTCAxNi42MzIgMTguMzgxIEMgMTcuOTMgMTguMzg3IDE5LjEwNSAxNy42MTMgMTkuNjEyIDE2LjQxOCBMIDIyLjI0NCAxMC4wNjMgQyAyMi4yNTIgMTAuMDQyIDIyLjI1NyAxMC4wMTkgMjIuMjU3IDkuOTk2IEMgMjIuMjUzIDkuOTAyIDIyLjE3NiA5LjgyOCAyMi4wODIgOS44MjYgTSAxNi4yNzEgMTAuMDA1IEMgMTYuMjcxIDkuOTA1IDE2LjE4OSA5LjgyNSAxNi4wODkgOS44MjUgTCA3LjcwNiA5LjgyNSBDIDcuMjUxIDkuODI1IDYuODUzIDEwLjM4IDcuMzM1IDEwLjgyNSBMIDEwLjEwNCAxMy40MDQgQyAxMC4xMDQgMTMuNDA0IDExLjIyNCAxNC40MzcgMTAuOTg0IDE1LjkxNiBDIDEwLjc3OCAxNy4yMTkgOS44ODkgMTguMDE2IDkuMjQxIDE4LjMwMiBDIDkuMjA4IDE4LjMxIDkuMTk2IDE4LjM1MSA5LjIxOSAxOC4zNzYgQyA5LjIzIDE4LjM4NyA5LjI0NiAxOC4zOTIgOS4yNjEgMTguMzg4IEwgMTIuNDg5IDE4LjM4OCBDIDEyLjY4MyAxOC4zOSAxMi44NTkgMTguMjc1IDEyLjkzNCAxOC4wOTUgTCAxNi4yNTYgMTAuMDY4IEMgMTYuMjY2IDEwLjA0OSAxNi4yNzEgMTAuMDI3IDE2LjI3MSAxMC4wMDUiLz48L3N2Zz4=)](https://www.st.com/en/evaluation-tools/nucleo-f767zi.html)
 [![MDK-Arm](https://img.shields.io/badge/Tool-Keil_uVision_5-informational?style=flat&color=darkgreen&logo=data:image/svg%2bxml;base64,<BASE64_DATA>)](https://www.keil.com/demo/eval/arm.htm)
 
+![nucleo-stm32f767zi](https://user-images.githubusercontent.com/26357786/112999426-8fdce700-918c-11eb-91a1-0a89976ba540.png)
+
 Mainly 2 documents are required to program a particular microcontroller.
 
 [Datasheet](https://www.st.com/resource/en/datasheet/stm32f767zi.pdf) | View block diagram, bus connections etc.
@@ -29,7 +31,7 @@ Mainly 2 documents are required to program a particular microcontroller.
 #### Flash Download
 [![Download Function](https://img.shields.io/badge/Download_Function-Erase_Sectors,Program,Verify,Reset_&_Run-informational?style=flat&color=blueviolet&logo=data:image/svg%2bxml)](https://www.keil.com/support/man/docs/ulinkme/ulinkme_su_download_functions.htm)
 
-#### CODES
+#### 1. BARE-METAL (register codes)
 
 1. [Hello World of Embedded - Blink an LED](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/01-blinky)
 2. [General Purpose Input Output](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/02-GPIO_Input)
