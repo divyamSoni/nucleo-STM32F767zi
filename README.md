@@ -55,3 +55,8 @@ Mainly 2 documents are required to program a particular microcontroller.
 20. [Serial Peripheral Interface Basic](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/22-SPI_basic)
 21. [Serial Peripheral Interface + Liquid Crystal Display](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/23-SPI_LCD_ST7735)
 22. [CAN Loopback Mode](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/Bare-metal/24-CAN_Loopback)
+
+#### 2. HAL
+
+1. [Hello World of Embedded - Blink an LED](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/HAL/001_blinky/Core/Src)
+2. [Universal Synchronous/Asynchronous Receiver Transmitter - Transmit Only](https://github.com/divyamSoni/nucleo-STM32F767zi/tree/master/HAL/002_UART/Core/Src)
