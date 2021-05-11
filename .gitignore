@@ -22,6 +22,7 @@ Startup/
 *.project
 *.ioc
 *.ld
+*.launch
 stm32f7xx_hal_msp.c
 stm32f7xx_it.c
 syscalls.c
