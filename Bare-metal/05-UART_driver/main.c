@@ -1,54 +1,85 @@
-/*	
-		RCC->APB1ENR bit 19 for UART4
-		PA0 <-> AF8 <-> UART4_TX
-*/
+/*********************************
+** Make UART transmitter driver	**
+** transmit a message and view 	**
+** using any serial monitor			**
+*********************************/
 
 #include "stm32f7xx.h"
 
 void UART2_Init(void);
-void UART_write(int ch);
-void delayms(int delay);
+void UART2_Transmit(int ch);
+void GPIO_Init(void);
+void Blue_Led2(void);
+void Green_Led1(void);
+void sysTickDelayMs(int n);
 
-char chara = '0';
-
-void UART4_Init(void){
-	
-	RCC->APB1ENR |= 0x80000; 		// Enables clock access to UART4
-	RCC->AHB1ENR |= 1;        	// Enables clock access to GPIOA
-	
-	UART4->BRR = 0x0682; 				// 9600 @16 MHz
-	UART4->CR1 |= 0x0008;				// Enable Tx
-	UART4->CR1 |= 1;     				// Enable UART
-	
-	GPIOA->AFR[0] = 8; 					// Enabling UART4 PA0 AF8
-	GPIOA->MODER |= 2;  				// PA0 <-> Alternate function
-
-}
-
-void UART_write(int ch){
-	// wait while TX buffer is empty
-	while(!(UART4->ISR & 0x0080)){}
-		chara = UART4->TDR;
-		UART4->TDR = (ch & 0x1FF);
-		
-}
-
-void delayms(int delay){
-	int i;
-	for(; delay>0; delay--){
-		for(i=0;i<3195;i++);
-	}
-}
-
+static char chara = '0';
 
 int main(void){
-	
-	UART4_Init();
+	GPIO_Init();
+	UART2_Init();
 	
 	while(1){
-		UART_write('H');
-		delayms(1000);
-		UART_write('i');
-		delayms(1000);
+		UART2_Transmit('H');
+		UART2_Transmit('i');
 	}	
+}
+
+void GPIO_Init(void){
+	RCC->AHB1ENR |= (1UL<<1)|(1UL<<3);  // Enables clock access to GPIOB, D
+	
+	GPIOB->MODER |= 1UL<<14;			// PB7 - output mode - LED2 - Blue
+	GPIOB->MODER |= 1;						// PB0 - output mode - LED1 - Green
+	
+	GPIOD->AFR[0] &= ~(0xFUL<<20);	// Clear PD5 - AF
+	GPIOD->AFR[0] = 7UL << 20; 			// AF7 (USART_B_TX) PD5
+	
+	GPIOD->AFR[0] &= ~(0xFUL<<24);	// Clear PD6 - AF
+	GPIOD->AFR[0] = 7UL << 24; 			// AF7 (USART_B_RX) PD6
+	
+	GPIOD->MODER &=~ (0x3UL << 10);	// Clear PD5 mode
+	GPIOD->MODER |= 1UL << 11;  		// PD5 - Alternate function
+	
+	GPIOD->MODER &=~ (0x3UL << 12);	// Clear PD6 mode
+	GPIOD->MODER |= 1UL << 13;  		// PD6 - Alternate function
+}
+
+void UART2_Init(void){
+	
+	RCC->APB1ENR |= 1UL << 17; 		// Enables clock access to UART2
+	
+	USART2->BRR = 0x0682; 				// 9600 @16 MHz
+	USART2->CR1 |= 0x0008;				// Enable Tx
+	USART2->CR1 |= 1;     				// Enable UART
+}
+
+void UART2_Transmit(int ch){
+	// wait while TX buffer is empty
+	while(!(USART2->ISR & 0x0080)){}
+	Green_Led1();
+	chara = (char)USART2->TDR;
+	USART2->TDR = (ch & 0x1FF);
+}
+
+void Blue_Led2(void){
+	GPIOB->ODR ^= 0x80;
+	sysTickDelayMs(500);
+}
+
+void Green_Led1(void){
+	GPIOB->ODR ^= 1;
+	sysTickDelayMs(500);
+}
+
+void sysTickDelayMs(int n){
+	// Clock 16 MHz
+	SysTick->LOAD = 16000; 	// Load with number of clocks per millisecond
+	SysTick->VAL = 0;				// Clear current value register
+	SysTick->CTRL = 0x5;		// Enable SysTick
+
+	for(int i = 0; i<n; i++){
+		// Wait until the count flag is set
+		while(!(SysTick->CTRL & 0x10000)){}
+	}
+	SysTick->CTRL = 0;     // Diable SysTick
 }
