@@ -10,16 +10,14 @@
 int main(void){
 	GPIOInit();
 	lcd_init();
-
+	
 	while(1){
-
+		lcd_command(1);			// Display clear
 		lcd_write("RG2004A:20X4 LCD", l1);
 		lcd_write("Hello World!", l2);
 		lcd_write("Hitachi: HD44780", l3);
 		lcd_write("5x8 Dot Matrix 8 bit", l4);
-
 		sysTickDelayMs(1000);
-		lcd_command(1);					// Display clear
 	}
 }
 
